@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class Main {
     private static Scanner sc = new Scanner(System.in);
 
+
     // Creating the grocery list object.
     private static GroceryList groceryList = new GroceryList();
+
 
     // To print the instructions to user.
     private static void printInstructions() {
@@ -18,42 +20,43 @@ public class Main {
         System.out.println("\t 6 - To quit the application.");
     }
 
+
     // To add an item to grocery list.
     public static void addItem() {
         System.out.print("Please enter the grocery item: ");
         groceryList.addGroceryItem(sc.nextLine());
     }
 
+
     // To modify an item already present in the grocery list.
     public static void modifyItem() {
-        System.out.print("Enter item number: ");
-        int itemNo = sc.nextInt();
-        sc.nextLine();
+        System.out.print("Enter the item you want to modify: ");
+        String currentItem = sc.nextLine();
+
         System.out.print("Enter replacement item: ");
         String newItem = sc.nextLine();
-        groceryList.modifyGroceryList(itemNo-1, newItem);
+
+        groceryList.modifyGroceryItem(currentItem, newItem);
     }
+
 
     // To remove an item which is already present in the grocery list.
     public static void removeItem() {
-        System.out.print("Enter item number: ");
-        int itemNo = sc.nextInt();
-        sc.nextLine();
-        groceryList.removeGroceryItem(itemNo-1);
+        System.out.print("Enter item you want to remove: ");
+        String item = sc.nextLine();
+
+        groceryList.removeGroceryItem(item);
     }
     
+
     // To search for an item in the grocery list.
     public static void searchItem() {
         System.out.print("Item to search for: ");
         String searchItem = sc.nextLine();
-        String searchResult = groceryList.findItem(searchItem);
-        if(searchResult != null) {
-            System.out.println("Found " + searchResult + " in our grocery list");
-        }
-        else {
-            System.out.println(searchItem + " is not in the grocery list");
-        }
+
+        groceryList.searchItem(searchItem);
     }
+
 
     public static void main(String[] args) {
         boolean quit = false;
