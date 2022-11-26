@@ -1,3 +1,4 @@
+package com.tsw.groceryApp;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,8 @@ public class Main {
 
     // To print the instructions to user.
     private static void printInstructions() {
-        System.out.println("\nPress ");
+        System.out.println("\n---------------------------------------------");
+        System.out.println("Press ");
         System.out.println("\t 0 - To print the choice options.");
         System.out.println("\t 1 - To print the list of grocery items.");
         System.out.println("\t 2 - To add an item to the list.");
@@ -18,6 +20,7 @@ public class Main {
         System.out.println("\t 4 - To remove an item from the list.");
         System.out.println("\t 5 - To search for an item in the list.");
         System.out.println("\t 6 - To quit the application.");
+        System.out.println("---------------------------------------------");
     }
 
 
@@ -95,6 +98,7 @@ public class Main {
                     break;
                 case 6:
                     quit = true;
+                    groceryList.saveGroceryList();
                     break;
                 default:
                     System.out.println("Invalid Choice. Please choose the correct option.");

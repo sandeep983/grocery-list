@@ -1,9 +1,9 @@
+package com.tsw.groceryApp;
 import java.util.ArrayList;
 
 public class GroceryList {
-    // Creatinf an ArrayList to store our grocery items.
-    private ArrayList<String> groceryList = new ArrayList<String>();
-
+    // Creating an ArrayList to store the grocery list.
+    private ArrayList<String> groceryList = Database.fetchAllData();
 
     // To format the user entered string to required format.
     // Which is first letter capital and all remaining small.
@@ -87,8 +87,15 @@ public class GroceryList {
         }
     }
 
+    
     // To search for an item in the grocery list, using this method internally only.
     private int findItem(String searchItem) {
         return groceryList.indexOf(formatString(searchItem));
+    }
+
+
+    // To save the grocery list to the database.
+    public void saveGroceryList() {
+        Database.saveAllData(groceryList);
     }
 }
