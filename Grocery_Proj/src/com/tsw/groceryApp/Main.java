@@ -20,7 +20,6 @@ public class Main {
         System.out.println("\t 4 - To remove an item from the list.");
         System.out.println("\t 5 - To search for an item in the list.");
         System.out.println("\t 6 - To quit the application.");
-        System.out.println("---------------------------------------------");
     }
 
 
@@ -67,6 +66,7 @@ public class Main {
         printInstructions();
         // Infinite loop until user wants to exit from it.
         while(!quit) {
+            System.out.println("---------------------------------------------");
             System.out.print("\nEnter your choice: ");
             // Restricting user to enter only integer numbers as choice.
             while (!sc.hasNextInt()) {
@@ -76,6 +76,7 @@ public class Main {
             }
             int choice = sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             switch(choice) {
                 case 0:
