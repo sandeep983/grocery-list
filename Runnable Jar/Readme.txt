@@ -1,0 +1,1 @@
+To run this program just simply double click on Run.bat file
